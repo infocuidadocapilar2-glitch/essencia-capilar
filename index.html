@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essencia Capilar | Tu Centro de Cuidado del Cabello</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header y navegación */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #8B7355;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #D4AF37;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #8B7355;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #8B7355;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #6d5c46;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Secciones */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #8B7355;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 10px;
+            color: #8B7355;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-weight: 700;
+            color: #D4AF37;
+            font-size: 18px;
+        }
+        
+        /* Productos */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-content h3 {
+            margin-bottom: 10px;
+            color: #8B7355;
+        }
+        
+        .product-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Equipo */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-size: cover;
+            background-position: center;
+            border: 5px solid #f1f1f1;
+        }
+        
+        .team-member h3 {
+            margin-bottom: 5px;
+            color: #8B7355;
+        }
+        
+        .team-member p {
+            color: #666;
+        }
+        
+        /* Testimonios */
+        .testimonials {
+            background-color: #f5f5f5;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .client-name {
+            font-weight: 700;
+            color: #8B7355;
+        }
+        
+        /* Contacto */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: #8B7355;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            color: #8B7355;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #D4AF37;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #D4AF37;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #D4AF37;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #ccc;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Essencia<span>Capilar</span></a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#equipo">Nuestro Equipo</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#contacto" class="btn">Reserva tu cita</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tu cabello merece lo mejor</h1>
+                <p>En Essencia Capilar combinamos técnicas avanzadas con productos naturales para realzar tu belleza natural</p>
+                <a href="#servicios" class="btn">Descubre nuestros servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos una amplia gama de tratamientos capilares personalizados para cada tipo de cabello</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Corte y Estilo</h3>
+                        <p>Corte personalizado según tu tipo de rostro y estilo de vida, con asesoramiento profesional.</p>
+                        <p class="price">Desde $35</p>
+                        <a href="#contacto" class="btn">Reservar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://capillfrance.com/wp-content/uploads/2018/12/5B-2.jpg');"></div>
+                    <div class="service-content">
+                        <h3>Coloración Profesional</h3>
+                        <p>Técnicas de coloración avanzadas con productos de alta calidad que respetan tu cabello.</p>
+                        <p class="price">Desde $60</p>
+                        <a href="#contacto" class="btn">Reservar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://img.freepik.com/foto-gratis/hermoso-cabello-proceso-tratamiento-queratina_23-2149332441.jpg?semt=ais_hybrid&w=740&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Tratamientos Capilares</h3>
+                        <p>Hidratación, nutrición y reconstrucción para devolver la vitalidad a tu cabello.</p>
+                        <p class="price">Desde $45</p>
+                        <a href="#contacto" class="btn">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" style="background-color: #f5f5f5;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Productos</h2>
+                <p>Selección de productos profesionales para el cuidado capilar en casa</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAo6Wx3GTx3hhQBxzjy2iaZWlSsLCc90Zf4A&s');"></div>
+                    <div class="product-content">
+                        <h3>Shampoo Nutritivo</h3>
+                        <p>Limpia en profundidad sin dañar la fibra capilar, ideal para cabellos secos.</p>
+                        <p class="price">$25</p>
+                        <a href="#contacto" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://olimpica.vtexassets.com/arquivos/ids/1185881/7509552847994-2.jpg?v=638338582415170000');"></div>
+                    <div class="product-content">
+                        <h3>Acondicionador Reparador</h3>
+                        <p>Restaura la suavidad y el brillo, reduciendo el frizz y las puntas abiertas.</p>
+                        <p class="price">$28</p>
+                        <a href="#contacto" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://m.media-amazon.com/images/I/51peJcGS9UL._AC_UF1000,1000_QL80_.jpg');"></div>
+                    <div class="product-content">
+                        <h3>Mascarilla Intensiva</h3>
+                        <p>Tratamiento profundo que repara el cabello dañado en solo 10 minutos.</p>
+                        <p class="price">$35</p>
+                        <a href="#contacto" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://www.kerastase.com.co/-/media/project/loreal/brand-sites/kerastase/americas/latam/homepage/a1/pack1/34746/ker_elixir_24_packshot_75ml_3474637215125_1x1_v2.jpg?rev=-1?as=1&w=200&hash=2649C891F5D551A45272375F364D8C51');"></div>
+                    <div class="product-content">
+                        <h3>Aceite Capilar</h3>
+                        <p>Protege y nutre el cabello del calor y los factores ambientales.</p>
+                        <p class="price">$30</p>
+                        <a href="#contacto" class="btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Equipo</h2>
+                <p>Profesionales apasionados por la belleza capilar y comprometidos con tu satisfacción</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <h3>María González</h3>
+                    <p>Especialista en Coloración</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <h3>Carlos Rodríguez</h3>
+                    <p>Especialista en Cortes</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <h3>Laura Martínez</h3>
+                    <p>Especialista en Tratamientos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>La satisfacción de nuestros clientes es nuestra mayor recompensa</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Llevo años buscando un lugar que entienda mi cabello rizado. En Essencia Capilar no solo me dieron el mejor corte de mi vida, sino que me enseñaron a cuidarlo correctamente."</p>
+                    <div class="client-info">
+                        <div class="client-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgSA3K6W5btSkNlI9KCvrNx4gIST9h3Cbqfg&s');"></div>
+                        <div>
+                            <p class="client-name">Ana López</p>
+                            <p>Cliente desde 2019</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"El tratamiento de keratina que me hicieron transformó por completo mi cabello. Estoy encantada con los resultados y el trato profesional de todo el equipo."</p>
+                    <div class="client-info">
+                        <div class="client-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFHPmPXafZyy3z2iVjXPHHLEvDikIuXdVJkA&s');"></div>
+                        <div>
+                            <p class="client-name">Sofía Ramírez</p>
+                            <p>Cliente desde 2020</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Siempre salgo feliz de Essencia Capilar. Carlos entiende perfectamente lo que quiero y me da consejos personalizados para mantener mi cabello sano entre visitas."</p>
+                    <div class="client-info">
+                        <div class="client-img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div>
+                            <p class="client-name">Miguel Torres</p>
+                            <p>Cliente desde 2018</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctanos</h2>
+                <p>Estamos aquí para responder todas tus preguntas y ayudarte a lucir tu mejor cabello</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de contacto</h3>
+                    <div class="contact-details">
+                        <p><i>📍</i> Av. Principal 123, Ciudad</p>
+                        <p><i>📞</i> +1 234 567 890</p>
+                        <p><i>✉️</i> info@essenciacapilar.com</p>
+                        <p><i>🕒</i> Lunes a Sábado: 9:00 - 20:00</p>
+                    </div>
+                    <h3>Síguenos en redes sociales</h3>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Tu nombre" required>
+                        <input type="email" placeholder="Tu email" required>
+                        <input type="tel" placeholder="Tu teléfono">
+                        <select>
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="corte">Corte y Estilo</option>
+                            <option value="color">Coloración</option>
+                            <option value="tratamiento">Tratamiento Capilar</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <textarea placeholder="Tu mensaje" required></textarea>
+                        <button type="submit" class="btn">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Essencia Capilar</h3>
+                    <p>Tu centro de cuidado capilar de confianza, donde la belleza se encuentra con la salud de tu cabello.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#equipo">Nuestro Equipo</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Corte y Estilo</a></li>
+                        <li><a href="#">Coloración</a></li>
+                        <li><a href="#">Tratamientos Capilares</a></li>
+                        <li><a href="#">Peinados para Eventos</a></li>
+                        <li><a href="#">Extensiones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suscríbete</h3>
+                    <p>Recibe consejos de cuidado capilar y promociones exclusivas.</p>
+                    <form>
+                        <input type="email" placeholder="Tu email" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none;">
+                        <button type="submit" class="btn" style="width: 100%;">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Essencia Capilar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
